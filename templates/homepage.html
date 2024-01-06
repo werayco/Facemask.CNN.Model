@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Mask Detection</title>
+</head>
+<body>
+    <h1>Face Mask Detection</h1>
+    <form action="{{url_for('upload')}}" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Upload Image and Predict">
+    </form>
+
+    {% if image_answer == 1%}
+        <p>this image is: {{ withMask }}</p>
+    {% elif image_answer == 0%}
+        <p>this image is: {{ withoutMask }} </p>
+    {% endif %}
+</body>
+</html>
